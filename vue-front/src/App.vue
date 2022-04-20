@@ -1,38 +1,28 @@
 <template>
-  <div id="app">
-    <div id="header">
+  <v-app>
+    <header app>
       <main-header/>
-    </div>
-    <div class="wrap">
-      <div id="menu">
-        <main-menu/>
-      </div>
-      <router-view/>
-    </div>
-    <div id="footer">
+    </header>
+
+    <v-main app>
+      <v-container fluid>
+        <router-view/>
+      </v-container>
+    </v-main>
+
+    <footer app>
       <main-footer/>
-    </div>
-  </div>
+    </footer>
+  </v-app>
 </template>
 
 <script>
 import MainHeader from './components/Header.vue'
 import MainFooter from './components/Footer.vue'
-import MainMenu from "@/components/Menu.vue"
-
-export default {
-  name: 'App',
-  components: {
-    'main-header': MainHeader,
-    'main-menu': MainMenu,
-    'main-footer': MainFooter
+  export default {
+    components: {
+      'main-header': MainHeader,
+      'main-footer': MainFooter
+    },
   }
-}
 </script>
-
-<style scoped>
-.wrap {
-  display: flex;
-  height: 60%;
-}
-</style>

@@ -1,14 +1,3 @@
 <template>
-  <div>home</div>
+  <h1>Home View</h1>
 </template>
-
-<script>
-
-</script>
-
-<style scoped>
-div {
-  flex: 2;
-  background-color: rgb(59, 104, 89);
-}
-</style>

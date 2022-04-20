@@ -1,18 +1,25 @@
 <template>
-  <div>footer</div>
+    <v-bottom-navigation v-model="value">
+      <v-btn value="recent">
+        <span>Recent</span>
+        <v-icon>mdi-history</v-icon>
+      </v-btn>
+
+      <v-btn value="favorites">
+        <span>Favorites</span>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+
+      <v-btn value="nearby">
+        <span>Nearby</span>
+        <v-icon>mdi-map-marker</v-icon>
+      </v-btn>
+  </v-bottom-navigation>
 </template>
 
 <script>
-export default {
-    name: 'main-footer'
-}
+  export default {
+    name: 'main-footer',
+    data: () => ({ value: 'recent' }),
+  }
 </script>
-
-<style scoped>
-div {
-    position: sticky;
-    height: 20%;
-    border-top: 1px solid #ebebeb;
-    background-color: beige;
-}
-</style>
