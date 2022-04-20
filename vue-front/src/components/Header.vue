@@ -48,7 +48,7 @@
 </template>
 
 <script>
-export default {
+  export default {
     name: 'main-header',
     data: () => ({
       appTitle: 'Title',
@@ -72,5 +72,5 @@ export default {
         }
       ]
     }),
-}
+  }
 </script>
