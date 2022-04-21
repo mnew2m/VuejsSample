@@ -2,7 +2,6 @@
   <header>
     <v-toolbar
       color="deep-purple"
-      dark
     >
       <span class="hidden-sm-and-up">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
@@ -23,6 +22,12 @@
         </v-toolbar-items>
       </span>
     </v-toolbar>
+
+    <v-tabs>
+      <v-tab>Item One</v-tab>
+      <v-tab>Item Two</v-tab>
+      <v-tab>Item Three</v-tab>
+    </v-tabs>
 
     <v-navigation-drawer
       v-model="drawer"
