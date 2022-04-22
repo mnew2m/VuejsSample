@@ -1,33 +1,48 @@
 <template>
   <header>
-    <v-toolbar
-      color="deep-purple"
-    >
+    <v-toolbar color="indigo darken-1">
       <span class="hidden-sm-and-up">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       </span>
-      <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
-      <v-spacer/>
-      <span class="hidden-xs">
-        <v-toolbar-items>
-          <v-btn
-            flat
-            v-for="item in sideMenu"
-            :key="item"
-            :to="item.path"
-          >
-            <v-icon left dark>{{ item.icon }}</v-icon>
-            {{ item.title }}
-          </v-btn>
-        </v-toolbar-items>
-      </span>
+      <v-toolbar-title>
+        <v-img max-width="100" src='@/assets/img/semes.png'/>
+        <!-- SEMES -->
+      </v-toolbar-title>
+      <v-toolbar-items>
+        <v-tabs class="hidden-xs" background-color="indigo darken-1">
+          <!-- <span class="hidden-xs"> -->
+            <!-- <v-toolbar-items> -->
+              <v-tab
+                v-for="item in sideMenu"
+                :key="item"
+                :to="item.path"
+              >
+                <!-- <v-icon>{{ item.icon }}</v-icon> -->
+                {{ item.title }}
+              </v-tab>
+            <!-- </v-toolbar-items> -->
+          <!-- </span> -->
+        </v-tabs>
+        <v-spacer/>
+        <v-spacer/>
+        <v-spacer/>
+        <v-spacer/>
+        <v-spacer/>
+        <v-radio-group
+          v-model="row"
+          row
+        >
+          <v-radio
+            label="Option 1"
+            value="radio-1"
+          ></v-radio>
+          <v-radio
+            label="Option 2"
+            value="radio-2"
+          ></v-radio>
+        </v-radio-group>
+      </v-toolbar-items>
     </v-toolbar>
-
-    <v-tabs>
-      <v-tab>Item One</v-tab>
-      <v-tab>Item Two</v-tab>
-      <v-tab>Item Three</v-tab>
-    </v-tabs>
 
     <v-navigation-drawer
       v-model="drawer"
@@ -62,20 +77,59 @@
       sideMenu: [
         {
           title: 'Home',
-          icon: 'mdi-history',
+          icon: 'mdi-home',
           path: '/'
         },
         {
-          title: 'About',
-          icon: 'mdi-history',
+          title: 'Favorite',
+          icon: 'mdi-chat-question',
           path: '/about'
         },
         {
-          title: 'Account',
-          icon: 'mdi-heart',
+          title: 'Layout',
+          icon: 'mdi-account',
           path: '/account'
-        }
-      ]
+        },
+        {
+          title: 'Transfer',
+          icon: 'mdi-account',
+          path: '/account'
+        },
+        {
+          title: 'Device',
+          icon: 'mdi-account',
+          path: '/account'
+        },
+        {
+          title: 'Function',
+          icon: 'mdi-account',
+          path: '/account'
+        },
+        {
+          title: 'History',
+          icon: 'mdi-account',
+          path: '/account'
+        },
+        {
+          title: 'Log',
+          icon: 'mdi-account',
+          path: '/account'
+        },
+        {
+          title: 'System',
+          icon: 'mdi-account',
+          path: '/account'
+        },
+      ],
+      radioGroup: 1,
+      radios: 'slide-x-transition-1',
+      row: null
     }),
   }
 </script>
+
+<style scoped>
+.v-icon {
+  padding-right: 10px;
+}
+</style>

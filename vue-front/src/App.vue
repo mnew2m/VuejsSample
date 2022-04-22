@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import MainHeader from './components/TheHeader.vue'
-import MainFooter from './components/TheFooter.vue'
+import MainHeader from '@/components/TheHeader.vue'
+import MainFooter from '@/components/TheFooter.vue'
   export default {
     components: {
       'main-header': MainHeader,
