@@ -1,48 +1,47 @@
 <template>
   <header>
-    <v-toolbar color="indigo darken-1">
+    <v-app-bar color="indigo darken-1">
       <span class="hidden-sm-and-up">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       </span>
-      <v-toolbar-title>
+      <v-app-bar-title>
         <v-img max-width="100" src='@/assets/img/semes.png'/>
         <!-- SEMES -->
-      </v-toolbar-title>
-      <v-toolbar-items>
-        <v-tabs class="hidden-xs" background-color="indigo darken-1">
-          <!-- <span class="hidden-xs"> -->
-            <!-- <v-toolbar-items> -->
-              <v-tab
-                v-for="item in sideMenu"
-                :key="item"
-                :to="item.path"
-              >
-                <!-- <v-icon>{{ item.icon }}</v-icon> -->
-                {{ item.title }}
-              </v-tab>
-            <!-- </v-toolbar-items> -->
-          <!-- </span> -->
-        </v-tabs>
-        <v-spacer/>
-        <v-spacer/>
-        <v-spacer/>
-        <v-spacer/>
-        <v-spacer/>
-        <v-radio-group
-          v-model="row"
+      </v-app-bar-title>
+      <v-tabs class="hidden-xs" background-color="indigo darken-1">
+        <!-- <span class="hidden-xs"> -->
+          <!-- <v-toolbar-items> -->
+            <v-tab
+              v-for="item in sideMenu"
+              :key="item"
+              :to="item.path"
+            >
+              <!-- <v-icon>{{ item.icon }}</v-icon> -->
+              {{ item.title }}
+            </v-tab>
+          <!-- </v-toolbar-items> -->
+        <!-- </span> -->
+      </v-tabs>
+      <v-spacer/>
+      <v-spacer/>
+      <v-spacer/>
+      <v-spacer/>
+      <v-spacer/>
+      <v-radio-group
+        v-model="row"
+        row
+      >
+        <v-radio
+          label="Option 1"
+          value="radio-1"
           row
-        >
-          <v-radio
-            label="Option 1"
-            value="radio-1"
-          ></v-radio>
-          <v-radio
-            label="Option 2"
-            value="radio-2"
-          ></v-radio>
-        </v-radio-group>
-      </v-toolbar-items>
-    </v-toolbar>
+        ></v-radio>
+        <v-radio
+          label="Option 2"
+          value="radio-2"
+        ></v-radio>
+      </v-radio-group>
+    </v-app-bar>
 
     <v-navigation-drawer
       v-model="drawer"
