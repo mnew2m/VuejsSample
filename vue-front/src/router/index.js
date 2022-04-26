@@ -1,6 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AccountView from '../views/AccountView.vue'
+import FavoriteView from '../views/FavoriteView.vue'
+import LayoutView from '../views/LayoutView.vue'
+import TransferView from '../views/TransferView.vue'
+import DeviceView from '../views/DeviceView.vue'
+import FunctionView from '../views/FunctionView.vue'
+import HistoryView from '../views/HistoryView.vue'
+import LogView from '../views/LogView.vue'
+import SystemView from '../views/SystemView.vue'
 
 const routes = [
   {
@@ -9,18 +16,45 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/favorite',
+    name: 'favorite',
+    component: FavoriteView
   },
   {
-    path: '/account',
-    name: 'account',
-    component: AccountView
-  }
+    path: '/layout',
+    name: 'layout',
+    component: LayoutView
+  },
+  {
+    path: '/transfer',
+    name: 'transfer',
+    component: TransferView
+  },
+  {
+    path: '/device',
+    name: 'device',
+    component: DeviceView
+  },
+  {
+    path: '/function',
+    name: 'function',
+    component: FunctionView
+  },
+  {
+    path: '/history',
+    name: 'history',
+    component: HistoryView
+  },
+  {
+    path: '/log',
+    name: 'log',
+    component: LogView
+  },
+  {
+    path: '/system',
+    name: 'system',
+    component: SystemView
+  },
 ]
 
 const router = createRouter({

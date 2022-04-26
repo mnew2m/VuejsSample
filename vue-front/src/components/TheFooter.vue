@@ -15,13 +15,5 @@
 <script>
   export default {
     name: 'main-footer',
-    data: () => ({
-      icons: [
-        'mdi-home',
-        'mdi-email',
-        'mdi-calendar',
-        'mdi-delete',
-      ],
-    }),
   }
 </script>

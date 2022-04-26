@@ -5,8 +5,8 @@
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       </span>
       <v-app-bar-title>
-        <v-img max-width="100" src='@/assets/img/semes.png'/>
-        <!-- SEMES -->
+        <v-img class="hidden-xs" max-width="100" src='@/assets/img/semes.png'/>
+        <span class="hidden-sm-and-up" > SEMES </span>
       </v-app-bar-title>
       <v-tabs class="hidden-xs" background-color="indigo darken-1">
         <!-- <span class="hidden-xs"> -->
@@ -52,15 +52,13 @@
         nav
         dense
       >
-        <v-list-item-group v-model="group">
-          <v-list-item 
-            v-for="item in sideMenu"
-            :key="item"
-            :to="item.path">
-            <v-icon>{{ item.icon }}</v-icon>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
+        <v-list-item 
+          v-for="item in sideMenu"
+          :key="item"
+          :to="item.path">
+          <v-icon>{{ item.icon }}</v-icon>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
   </header>
@@ -81,43 +79,43 @@
         },
         {
           title: 'Favorite',
-          icon: 'mdi-chat-question',
-          path: '/about'
+          icon: 'mdi-heart',
+          path: '/favorite'
         },
         {
           title: 'Layout',
           icon: 'mdi-account',
-          path: '/account'
+          path: '/layout'
         },
         {
           title: 'Transfer',
           icon: 'mdi-account',
-          path: '/account'
+          path: '/transfer'
         },
         {
           title: 'Device',
           icon: 'mdi-account',
-          path: '/account'
+          path: '/device'
         },
         {
           title: 'Function',
           icon: 'mdi-account',
-          path: '/account'
+          path: '/function'
         },
         {
           title: 'History',
           icon: 'mdi-account',
-          path: '/account'
+          path: '/history'
         },
         {
           title: 'Log',
           icon: 'mdi-account',
-          path: '/account'
+          path: '/log'
         },
         {
           title: 'System',
           icon: 'mdi-account',
-          path: '/account'
+          path: '/system'
         },
       ],
       radioGroup: 1,
