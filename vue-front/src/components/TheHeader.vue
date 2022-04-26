@@ -9,18 +9,13 @@
         <span class="hidden-sm-and-up" > SEMES </span>
       </v-app-bar-title>
       <v-tabs class="hidden-xs" background-color="indigo darken-1">
-        <!-- <span class="hidden-xs"> -->
-          <!-- <v-toolbar-items> -->
-            <v-tab
-              v-for="item in sideMenu"
-              :key="item"
-              :to="item.path"
-            >
-              <!-- <v-icon>{{ item.icon }}</v-icon> -->
-              {{ item.title }}
-            </v-tab>
-          <!-- </v-toolbar-items> -->
-        <!-- </span> -->
+        <v-tab
+          v-for="item in sideMenu"
+          :key="item"
+          :to="item.path"
+        >
+          {{ item.name }}
+        </v-tab>
       </v-tabs>
       <v-spacer/>
       <v-spacer/>
@@ -57,7 +52,7 @@
           :key="item"
           :to="item.path">
           <v-icon>{{ item.icon }}</v-icon>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-title>{{ item.name }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -65,59 +60,15 @@
 </template>
 
 <script>
+import v_menus from '@/assets/vMenus.js'
+
   export default {
     name: 'main-header',
     data: () => ({
       appTitle: 'Title',
       drawer: false,
       group: true,
-      sideMenu: [
-        {
-          title: 'Home',
-          icon: 'mdi-home',
-          path: '/'
-        },
-        {
-          title: 'Favorite',
-          icon: 'mdi-heart',
-          path: '/favorite'
-        },
-        {
-          title: 'Layout',
-          icon: 'mdi-account',
-          path: '/layout'
-        },
-        {
-          title: 'Transfer',
-          icon: 'mdi-account',
-          path: '/transfer'
-        },
-        {
-          title: 'Device',
-          icon: 'mdi-account',
-          path: '/device'
-        },
-        {
-          title: 'Function',
-          icon: 'mdi-account',
-          path: '/function'
-        },
-        {
-          title: 'History',
-          icon: 'mdi-account',
-          path: '/history'
-        },
-        {
-          title: 'Log',
-          icon: 'mdi-account',
-          path: '/log'
-        },
-        {
-          title: 'System',
-          icon: 'mdi-account',
-          path: '/system'
-        },
-      ],
+      sideMenu: v_menus,
       radioGroup: 1,
       radios: 'slide-x-transition-1',
       row: null
